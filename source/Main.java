@@ -1,9 +1,11 @@
-public class TextEditor {
+public class Main {
     /**
      * The main application entry-point method.
      * @param arguments Command-line arguments.
      */
     public static void main(String[] arguments) {
-        MainFrame.getInstance().setVisible(true);
+        TextEditor editor = TextEditor.getInstance();
+        MainFrame mainFrame = new MainFrame(editor);
+        mainFrame.setVisible(true);
     }
 }
