@@ -29,28 +29,4 @@ public class MenuListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         System.out.println(event.getActionCommand());
     }
-
-//    @Override
-//    public void actionPerformed(ActionEvent event) {
-//        System.out.println(event.getActionCommand());
-//
-//        if (Objects.equals(event.getActionCommand(), "New File")) {
-//            FileDialog fileDialog = MainFrame.getInstance().getFileDialog();
-//            fileDialog.setVisible(true);
-//
-//            // Create the new file
-//            String filename = fileDialog.getFile();
-//
-//            try {
-//                new File(filename).createNewFile();
-//            } catch (IOException error) {
-//                error.printStackTrace();
-//            }
-//
-//            System.out.println("Created new file \"" + filename + "\"");
-//
-//            // Display the new file contents
-//            MainFrame.getInstance().getTextComponent().setText();
-//        }
-//    }
 }

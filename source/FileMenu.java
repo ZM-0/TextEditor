@@ -25,8 +25,8 @@ public class FileMenu extends Menu {
 
         // Add the menu items
         this.addItem("New File", new NewFileListener(editor, mainFrame));
+        this.addItem("Save File", new SaveFileListener(editor, mainFrame));
 //        this.addItem("Open File");
-//        this.addItem("Save File");
     }
 
     /**

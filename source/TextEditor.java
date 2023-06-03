@@ -100,7 +100,7 @@ public class TextEditor {
         fileReader.read(buffer);
         fileReader.close();
 
-        this.text = Arrays.toString(buffer);
+        this.text = new String(buffer);
     }
 
     /**
