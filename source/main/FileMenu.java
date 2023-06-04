@@ -1,3 +1,8 @@
+package main;
+
+import listeners.MenuListener;
+import listeners.OpenFileListener;
+import listeners.SaveFileListener;
 import java.awt.Menu;
 import java.awt.MenuItem;
 
@@ -11,22 +16,16 @@ public class FileMenu extends Menu {
     protected final TextEditor editor;
 
     /**
-     * The frame displaying the file.
-     */
-    protected final MainFrame mainFrame;
-
-    /**
      * Constructs the file menu.
+     * @param editor The text editor the menu is on.
      */
-    public FileMenu(TextEditor editor, MainFrame mainFrame) {
+    public FileMenu(TextEditor editor) {
         super("File");
         this.editor = editor;
-        this.mainFrame = mainFrame;
 
         // Add the menu items
-        this.addItem("New File", new NewFileListener(editor, mainFrame));
-        this.addItem("Save File", new SaveFileListener(editor, mainFrame));
-//        this.addItem("Open File");
+        this.addItem("Create/Open File", new OpenFileListener(editor));
+        this.addItem("Save File", new SaveFileListener(editor));
     }
 
     /**

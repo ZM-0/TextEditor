@@ -1,33 +1,39 @@
+package listeners;
+
 import java.awt.event.ActionEvent;
 import java.awt.FileDialog;
 import java.io.IOException;
+import main.TextEditor;
 
-public class NewFileListener extends MenuListener {
+/**
+ * A listener to handle events for the opening and creating of files.
+ */
+public class OpenFileListener extends MenuListener {
     /**
-     * Creates a menu listener to listen to the given menu.
+     * Creates a listener for the given editor.
      * @param editor The text editor being operated on.
-     * @param mainFrame The frame displaying the file.
      */
-    public NewFileListener(TextEditor editor, MainFrame mainFrame) {
-        super(editor, mainFrame);
+    public OpenFileListener(TextEditor editor) {
+        super(editor);
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
         // Open the file dialog
-        FileDialog fileDialog = this.mainFrame.getFileDialog();
+        FileDialog fileDialog = this.editor.getFileDialog();
         fileDialog.setVisible(true);
 
-        // Create the given file
+        // Get the name of the selected file
         String filename = fileDialog.getFile();
 
+        // Open or create the given file
         try {
-            this.editor.createFile(filename);
+            this.editor.openFile(filename);
         } catch (IOException error) {
             System.out.println("Failed to create file \"" + filename + "\"");
             System.exit(1);
         }
 
-        this.mainFrame.repaint();
+        this.editor.repaint();
     }
 }
