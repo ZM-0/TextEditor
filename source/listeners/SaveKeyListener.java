@@ -7,7 +7,7 @@ import java.io.IOException;
 import main.TextEditor;
 
 /**
- * A listener to detect when Ctrl+S has been typed to save the file.
+ * A listener to detect when Ctrl+S has been pressed to save the file.
  */
 public class SaveKeyListener extends KeyAdapter {
     /**

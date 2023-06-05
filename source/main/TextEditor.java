@@ -1,6 +1,7 @@
 package main;
 
 import listeners.FrameListener;
+import listeners.OpenKeyListener;
 import listeners.SaveKeyListener;
 import listeners.TextEditListener;
 import java.awt.Dimension;
@@ -46,6 +47,7 @@ public class TextEditor extends Frame {
         // Set up the fields
         this.fileDialog = new FileDialog(this);
         this.textComponent = new TextArea();
+        this.textComponent.addKeyListener(new OpenKeyListener(this));
         this.textComponent.addKeyListener(new SaveKeyListener(this));
         this.textComponent.addTextListener(new TextEditListener(this));
         this.add(this.textComponent);
