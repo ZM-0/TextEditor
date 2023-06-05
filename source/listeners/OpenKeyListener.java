@@ -28,18 +28,10 @@ public class OpenKeyListener extends KeyAdapter {
     @Override
     public void keyPressed(KeyEvent event) {
         if (event.isControlDown() && event.getKeyCode() == KeyEvent.VK_O) {
-            // Open the file dialog
-            FileDialog fileDialog = this.editor.getFileDialog();
-            fileDialog.setVisible(true);
-
-            // Get the name of the selected file
-            String filename = fileDialog.getFile();
-
-            // Open or create the given file
+            // Get user input to select the file, and then open or create the given file
             try {
-                this.editor.openFile(filename);
+                this.editor.openFile();
             } catch (IOException error) {
-                System.out.println("Failed to create file \"" + filename + "\"");
                 System.exit(1);
             }
 

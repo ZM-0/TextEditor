@@ -67,12 +67,19 @@ public class TextEditor extends Frame {
     }
 
     /**
+     * Gets user input for the file to be opened or created.
      * Opens the file if it exists, or creates a new file if it doesn't exist.
      * The new file is displayed in the editor.
-     * @param pathname The pathname of the new file.
      * @throws IOException Thrown if the file couldn't be made.
      */
-    public void openFile(String pathname) throws IOException {
+    public void openFile() throws IOException {
+        // Open the file dialog
+        this.fileDialog.setVisible(true);
+
+        // Get the name of the selected file
+        String pathname = this.fileDialog.getFile();
+
+        // Open or create the file
         this.file = new EditorFile(pathname);
         this.setText(this.file.read());
     }

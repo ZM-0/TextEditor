@@ -11,3 +11,4 @@ in the text area. The text area can be modified.
 Any changes to the text area will not be saved immediately,
 and this will be indicated by an asterisk in the title bar.
 The file can be saved through the file menu, or Ctrl+S.
+A file can be opened or created with Ctrl+O.
