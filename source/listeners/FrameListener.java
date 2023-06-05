@@ -18,6 +18,7 @@ public class FrameListener extends WindowAdapter {
      * @param frame The frame to be listened to.
      */
     public FrameListener(Frame frame) {
+        super();
         this.frame = frame;
     }
 
