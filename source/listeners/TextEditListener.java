@@ -25,10 +25,8 @@ public class TextEditListener implements TextListener {
 
     @Override
     public void textValueChanged(TextEvent event) {
-        if (this.editor.getStatus() != EditorStatus.NO_FILE) {
+        if (this.editor.getStatus() == EditorStatus.SAVED) {
             this.editor.setStatus(EditorStatus.UNSAVED);
-        } else {
-            this.editor.setStatus(EditorStatus.SAVED);
         }
 
         this.editor.repaint();

@@ -67,6 +67,15 @@ public class TextEditor extends Frame {
     }
 
     /**
+     * The main application entry-point method.
+     * @param arguments Command-line arguments.
+     */
+    public static void main(String[] arguments) {
+        TextEditor editor = new TextEditor();
+        editor.setVisible(true);
+    }
+
+    /**
      * Gets user input for the file to be opened or created.
      * Opens the file if it exists, or creates a new file if it doesn't exist.
      * The new file is displayed in the editor.
@@ -166,7 +175,7 @@ public class TextEditor extends Frame {
         } else {
             String title = "Text Editor - " + this.file.getName();
 
-            if (this.getStatus() != EditorStatus.SAVED) {
+            if (this.getStatus() == EditorStatus.UNSAVED) {
                 title = title.concat("*");
             }
 
