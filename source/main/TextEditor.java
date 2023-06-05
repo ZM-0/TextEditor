@@ -76,11 +76,12 @@ public class TextEditor extends Frame {
         // Open the file dialog
         this.fileDialog.setVisible(true);
 
-        // Get the name of the selected file
-        String pathname = this.fileDialog.getFile();
+        // Get the absolute path of the selected file
+        // Using the absolute path prevents ambiguity and errors when in different directories
+        String absolutePath = this.fileDialog.getDirectory() + this.fileDialog.getFile();
 
         // Open or create the file
-        this.file = new EditorFile(pathname);
+        this.file = new EditorFile(absolutePath);
         this.setText(this.file.read());
     }
 
